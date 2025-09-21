@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF=8">
+    <title>FORM example</title>
+
+</head>
+<body>
+   <blockquote> <h2><center>REGISTRATION FORM</center></h2>
+    <hr>
+<!--form action="yha pe jo bhi fill karoge wo open hoga ya redirect hoga jab submut click hoga" -->
+<!--formm action="process.php"     wont work cause we dont have process.php in backend to redirect so it say not found-->
+<!--or keep action="#" if we just want to check html , no backend needed-->
+
+
+
+
+<!-- form action="process.php method="post"  MAM NE YE LIKHWAYA THA , BUT IT WONT WORK AS WE DONT HAVE PROCESS.PHP FILE
+ intead of this we used action="#" coz it doesnt need backend file-->
+
+    <form action="#" method="post">
+
+
+        <!--TEXT INPUT-->
+            <label for="name"> NAME :</label><br>
+            <input type="text" id="name" name="name"><br><br>
+
+
+        <!--PASSWORD-->
+            <label for="password">Password: <label><br>
+            <input type ="password" id="password" name="password"><br><br>
+
+        <!--Text area-->
+        <label for="bio">About You:</label><br>
+        <textarea id="bio" name="bio" rows="4" cols="30"></textarea><br><br>
+
+        <!--Radio                       -      for one tick-->
+
+        <p>GENDER :</p>
+        <input type="radio" name="GENDER" value="Male">Male
+        <input type="radio" name="GENDER" value="Female"> Female
+        <input type="radio" name="GENDER" value="Other"> Other
+
+        <!-- Checkbox                      for multiple option at once-->
+         <p>HOBBIES :</p>
+         <input type="checkbox" name="hobby" value="Reading">Reading
+         <input type="checkbox" name="hobby" value="Music"> Music
+        <input type="checkbox" name="hobby" value="Dancing"> Dancing<br><br>
+
+        <!-- Drop down                    for list option to choose-->
+        <label for="country">Country: </label>
+        <select id="country" name="country">
+            <option value="India" >India</option>
+            <option value="USA">USA</option>
+            <option value="UK">UK</option>
+
+        </select><br><br>
+
+
+        <!-- FILE UPLOAD -->
+         <label for="resume">Upload Resume: </label>
+        <input type="file" id="resume"><br><br>
+
+
+        <!--submit-->
+         <input type="submit" value="Submit/jama kar de">
+         
+
+         <!--reset-->
+         <input type="reset" value="Reset karle">
+         
+
+
+    </form>
+
+<!--note - 
+(1) DIFFERENCE IN METHOD OF FORM B/W get and post
+
+*==>GET appends form data to the URL, making it visible and suitable for non-sensitive data retrieval,
+ but with URL length limitations.
+*==>POST sends form data in the request body, making it invisible in the URL and suitable for sensitive or large amounts of data, without length restrictions.
+
+
+GET requests can be bookmarked and cached, while POST requests are not typically cached or stored in browser history.
+
+
+
+
+(2) attribute for of label should be equal to id attribute of input 
+(isse reader ko ease hota h ,vo either label par click kare ya input field par ,
+ click karte sidhe focus/redirect ho jayega input field me 
+ likhne ke liye; to understand this once click on label and once directly
+ on input box , dono ek hi jagah par pohacha dega).
+
+
+
+
+(3) <input> element: This is one of the most frequent uses of the type attribute.
+ It defines the type of input control to be displayed in a form. 
+ Examples include:
+*==>type="text": A single-line text field.
+*==>type="password": A password field where characters are masked.
+*==>type="submit": A button to submit form data.
+*==>type="checkbox": A checkbox for selecting multiple options.
+*==>type="radio": A radio button for selecting a single option from a group.
+*==>type="email": A text field specifically for email addresses, often with built-in validation.
+*==>type="date": A date picker.
+*==>type="file": A file upload control.
+
+
+
+
+
+(4)textarea tag-
+The <textarea> tag in HTML is used to create a multi-line text input control within a web form. 
+It allows users to enter and edit free-form text that can span multiple lines, unlike the single-line 
+input field created by <input type="text">.
+
+Key Characteristics and Usage:
+
+Multi-line Input: Designed specifically for collecting longer pieces of text, such as comments, messages, feedback, or descriptions.
+Syntax: It is a container element, meaning it requires both an opening <textarea> tag and a closing </textarea> tag.
+ Any content placed between these tags will appear as the default text within the text area when the page loads.
+Attributes:
+*==>rows: Specifies the visible height of the text area in terms of the number of lines of text.
+*==>cols: Specifies the visible width of the text area in terms of the average character width.
+*==>name: Essential for form submission, as it provides a name for the text area's value when the form data is sent to a server.
+*==>placeholder: Provides a hint to the user about what kind of input is expected in the text area.
+*==>maxlength / minlength: Define the maximum or minimum number of characters allowed in the text area.
+
+
+
+
+(5) The value attribute specifies the value of an <input> element.
+
+The value attribute is used differently for different input types:
+
+For type "button", "reset", and "submit" - it defines the text on the button
+For type "text", "password", and "hidden" - it defines the initial (default) value of the input field
+For type "checkbox", "radio", "image" - it defines the value associated with the input (this is also the value that is sent on submit,)
+Note: The value attribute cannot be used with <input type="file">
+
+
+
+
+
+
+(5)name attribute within input, or textarea or select; in forms.
+
+The name attribute in HTML elements such as <input>, <textarea>, and <select> serves a crucial purpose in form submission 
+    and client-side scripting.
+1. Form Submission:
+When a form containing these elements is submitted, the name attribute is used to identify the data associated with each field.
+ The browser sends the data as key-value pairs, where the name attribute's value acts as the key and the user's input (or selected option) is the value.
+For example, if an <input type="text" name="username"> field has "JohnDoe" entered, the submitted data will include username=JohnDoe.
+Server-side languages (like PHP, Python, Node.js) then use these name values to access and process the submitted data.
+2. Client-Side Scripting (JavaScript):
+While id attributes are commonly used for direct element selection in JavaScript, the name attribute can also be used to reference elements,
+ particularly when dealing with collections of elements like radio buttons or checkboxes that share the same name.
+For example, document.getElementsByName("color") would return a collection of all elements with the name="color" attribute.
+3. Specific Element Considerations:
+<input>: Essential for all input types (text, password, radio, checkbox, etc.) to ensure their values are submitted with the form.
+<textarea>: Similarly, the name attribute identifies the multi-line text content entered by the user.
+<select>: The name attribute is vital for grouping and identifying which option(s) have been selected within the dropdown list.
+
+    (MATLAB NAME BLOCK CREATE KARTA H , USKE ANDAR SUBBLOCK
+    E.G NAME= HOBBY THEN USKE ANDAR 3 RADIO BUTTON
+    ANOTHER NAME= SECTION , USKE ANDAR 5 RADIO BUTTON 
+    
+    YHA HOBBY AND SECTION BOTH ARE DIFFERENT BUT DONO KE PASS 3&5 RESPECTIVE RADIO BUTTON H)
+
+
+
+
+(6)DIFFERENCE B/W PAIR OF (id & label for) AND (id & name)
+
+*-> id and label for must match: The for attribute of a <label> element
+ must precisely match the id attribute of the form control it is associated with.
+  This is essential for accessibility, allowing users to click on the label to focus the 
+  corresponding input field  and providing screen readers with the necessary context
+
+*->id and name can be the same, but it's not required: The id attribute uniquely identifies 
+an element on a page for CSS styling, JavaScript manipulation, or as a target for hyperlinks. 
+The name attribute is used to identify the input field when form data is submitted to a server.
+ While they can be the same, they serve different functions.
+  For instance, multiple radio buttons in a group share the same name but each has a unique id.
+
+*-in summary-> id and name can be the same, but it's not required: The id attribute uniquely identifies an element on a page for CSS styling, 
+JavaScript manipulation, or as a target for hyperlinks. The name attribute is used to identify the input field when form data is submitted to a server. 
+While they can be the same, they serve different functions. For instance, multiple radio buttons in a group share the same name but each has a unique id.
+
+
+-->
+
+
+
+
+</blockquote>
+</body>
+
+</html>

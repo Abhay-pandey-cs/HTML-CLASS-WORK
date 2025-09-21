@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF=8">
+    <title>FORM example</title>
+
+</head>
+<body>
+   <blockquote> <h2><center>Get vs Post</center></h2>
+    <hr>
+<!--form action="yha pe jo bhi fill karoge wo open hoga ya redirect hoga jab submut click hoga" -->
+<!--formm action="process.php"     wont work cause we dont have process.php in local or server so it will give error-->
+
+<!--or keep action="#" if we just want to check html , no backend needed-->
+
+
+    
+
+<B>GET METHOD</B>
+     <form action="#" method="post">  <!--in post method when we will submit,  url will NOT display submited text, which is secure
+                                    for sensitive data e.g bank details etc. , SECURED-->
+        <label for="rollno">ROLL NO:</label>
+        <input type="text" id="rollno" name="rollno"><br><br>
+    </form>
+    <input type="submit" value="submit it by clicking here">
+    <input type="reset" value="click here to reset"><br><br>
+    CHECK OUT URL AND NOTICE THAT IT DOESNT CHANGE OR DISPLAY INFO IN URL.
+    <hr>
+
+
+
+<B>POST METHOD</B>
+    <form action="#" method="get">  <!--in get method when we will submit,  url will display submited text, which is insecure
+                                    for sensitive data e.g bank details etc., UNSECURED , GOOD FOR BOOKMARK ,HISTORY
+                                    CACHED MEMORY ETC-->
+                                   
+        <label for="rollno">ROLL NO:</label>
+        <input type="text" id="rollno" name="rollno"><br><br>
+
+        <input type="submit" value="submit it by clicking here">
+        <input type="reset" value="click here to reset"><br><br>
+     CHECK OUT URL AND NOTICE THE CHANGES IN URL.
+    </form>
+
+
+    <hr><br>
+
+   
+
+
+
+<h4><i>fill form action="xyz.php" </i><br>if we have xyz file in server , it will redirect to it.
+    <br><br>
+    But if we dont have any file and we just want to check html only ,then there is no need of backend file,we can fill #<br>
+   <br><i> fill form action="#"</i>
+</h4>
+
+<H3>DIFFERENCE IN METHOD OF FORM B/W get and post method</H3>
+
+*==><dfn><b>GET</b></dfn> appends form data to the URL, making it visible and suitable for non-sensitive data retrieval,
+ but with URL length limitations.<br>
+*==><dfn><cite><b>POST</b></cite></dfn> sends form data in the request body, making it invisible in the url and suitable for sensitive or large
+ amounts of data, without length restrictions.<br><br>
+
+
+<cite><dfn><b>GET</b></dfn></cite> requests can be bookmarked and cached, while POST requests are not typically cached or stored in browser history.
+</blockquote>
+   </body>
+   </html>
