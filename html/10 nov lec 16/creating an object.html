@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <TITLE>
+            CREATING AN OBJECT
+        </TITLE>
+        <SCRIPT>
+            // creating an object
+            let person = {
+                firstname: "john",
+                lastname: "doe",
+                age: 25,
+                fullname: function(){
+                    return this.firstname + " " + this.lastname;
+
+                }
+            };
+
+            // assessing object properties & method
+            alert("person: "+ person.fullname()+"(age: "+ person.age +")");
+        </SCRIPT>
+    </head>
+</html>

@@ -6,18 +6,39 @@
         </title>
 
         <style>
-            <p>{ 
-                font-family: Arial , sans-serif;
+            .highlight{
+                color:blue;
+                font-size: 20px;
+                font-weight:bold;
             }
+
+
+            #special{            
+                color:red;
+                background-color: yellow;
+                padding:10px;
+                border-radius:5px;
+            }
+            
         </style>
            
     </head>
 <body>
-    <h1>Welcome to HTML with CSS</h1>
+    <h1 class="highlight">Welcome to HTML with CSS</h1>
     <p> This is a normal paragraph.</p>
-    <p>This paragraph uses a class style</p>
-    <p>This paragraph uses an ID syle</p>
+    <p class="highlight">This paragraph uses a class style(highlight)</p>
+    <p id="special">This paragraph uses an ID syle(special)</p>
 </body>
 
 
 </html>
+
+
+<!--
+*==> class are initialized with . in internal css in header part
+*==> ID are initialized with # in internal css in header part
+
+
+these are called in body part.
+
+-->
